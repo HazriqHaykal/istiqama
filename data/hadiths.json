@@ -1,0 +1,101 @@
+{
+  "note": "Starter set of well-known, widely-authenticated hadiths. Hadith numbering can vary between print editions and translations — please verify references (e.g. against sunnah.com) before treating them as final, and feel free to expand this list.",
+  "hadiths": [
+    {
+      "id": "intentions",
+      "translation": "Actions are judged by intentions, and each person will get what they intended.",
+      "source": "Sahih al-Bukhari 1; Sahih Muslim 1907",
+      "explanation": "The value of a deed before Allah depends on the sincerity behind it, not just the outward action."
+    },
+    {
+      "id": "love-for-brother",
+      "translation": "None of you truly believes until he loves for his brother what he loves for himself.",
+      "source": "Sahih al-Bukhari 13; Sahih Muslim 45",
+      "explanation": "Real faith shows itself in genuinely wishing good for others, not just for yourself."
+    },
+    {
+      "id": "speak-good-or-silent",
+      "translation": "Whoever believes in Allah and the Last Day should speak good or remain silent.",
+      "source": "Sahih al-Bukhari 6018; Sahih Muslim 47",
+      "explanation": "Guarding the tongue is a direct expression of faith — if words won't help, silence is better than harm."
+    },
+    {
+      "id": "cleanliness-half-of-faith",
+      "translation": "Cleanliness is half of faith.",
+      "source": "Sahih Muslim 223",
+      "explanation": "Physical and spiritual purification are treated as two halves of the same discipline in Islam."
+    },
+    {
+      "id": "learn-and-teach-quran",
+      "translation": "The best among you are those who learn the Qur'an and teach it.",
+      "source": "Sahih al-Bukhari 5027",
+      "explanation": "Engaging with the Qur'an isn't just personal — passing that knowledge on is part of what makes it valuable."
+    },
+    {
+      "id": "tongue-and-hand",
+      "translation": "A Muslim is the one from whose tongue and hand other people are safe.",
+      "source": "Sahih al-Bukhari 10; Sahih Muslim 41",
+      "explanation": "A basic, practical marker of faith: not causing harm to others through speech or action."
+    },
+    {
+      "id": "strong-believer",
+      "translation": "The strong believer is better and more beloved to Allah than the weak believer, though there is good in both.",
+      "source": "Sahih Muslim 2664",
+      "explanation": "Strength here means determination and character, not physical power — paired with a reminder to still value effort in everyone."
+    },
+    {
+      "id": "consistency",
+      "translation": "The most beloved deeds to Allah are the ones done consistently, even if small.",
+      "source": "Sahih al-Bukhari 6465; Sahih Muslim 782",
+      "explanation": "Small, steady acts of worship outweigh occasional bursts of effort — a direct case for building daily habits."
+    },
+    {
+      "id": "make-things-easy",
+      "translation": "Make things easy and do not make them difficult; give glad tidings and do not repel people.",
+      "source": "Sahih al-Bukhari 69, 6125; Sahih Muslim 1734",
+      "explanation": "Guidance for anyone teaching or calling others to faith: lead with encouragement, not harshness."
+    },
+    {
+      "id": "good-deed-erases-bad",
+      "translation": "Fear Allah wherever you are, follow a bad deed with a good deed to erase it, and treat people well.",
+      "source": "Jami at-Tirmidhi 1987 (hasan sahih)",
+      "explanation": "A practical three-part formula for self-improvement: God-consciousness, repentance through good deeds, and good character."
+    },
+    {
+      "id": "guide-to-good",
+      "translation": "Whoever guides someone to good will have a reward like the one who did it.",
+      "source": "Sahih Muslim 1893",
+      "explanation": "Sharing knowledge or pointing someone toward something good multiplies its reward rather than diluting it."
+    },
+    {
+      "id": "mixing-with-people",
+      "translation": "The believer who mixes with people and patiently bears their harm is better than the one who avoids people and doesn't bear their harm.",
+      "source": "Jami at-Tirmidhi 2507 (hasan)",
+      "explanation": "Faith isn't only cultivated in isolation — staying engaged with people, even when it's difficult, is framed as the better path."
+    },
+    {
+      "id": "smile-is-charity",
+      "translation": "Smiling in the face of your brother is an act of charity.",
+      "source": "Jami at-Tirmidhi 1956 (hasan)",
+      "explanation": "Even the smallest, easiest gestures toward others count as worship when done with the right intention."
+    },
+    {
+      "id": "modesty-branch-of-faith",
+      "translation": "Modesty is a branch of faith.",
+      "source": "Sahih al-Bukhari 9; Sahih Muslim 36",
+      "explanation": "Modesty here covers humility and restraint in speech, dress, and behavior — one strand within faith, not separate from it."
+    },
+    {
+      "id": "hearts-and-actions",
+      "translation": "Allah does not look at your outward appearance or your wealth, but He looks at your hearts and your deeds.",
+      "source": "Sahih Muslim 2564",
+      "explanation": "A reminder that sincerity and conduct matter more than status or how things look from the outside."
+    },
+    {
+      "id": "seeking-knowledge",
+      "translation": "Whoever follows a path in pursuit of knowledge, Allah makes easy for him a path to Paradise.",
+      "source": "Sahih Muslim 2699",
+      "explanation": "Learning — including religious knowledge — is presented as a path with real spiritual weight, not just a worldly pursuit."
+    }
+  ]
+}

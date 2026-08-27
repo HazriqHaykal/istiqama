@@ -6,7 +6,7 @@ create table if not exists app_state (
   tahajud_log jsonb not null default '{}',
   quran_log jsonb not null default '{}',
   quran_goal int not null default 5,
-  hadith_read jsonb not null default '[]',
+  hadith_read jsonb not null default '{}',
   updated_at timestamptz not null default now()
 );
 

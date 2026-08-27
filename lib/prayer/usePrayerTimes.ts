@@ -137,6 +137,12 @@ export function usePrayerTimes() {
     };
   }, [location, method]);
 
+  const fajrAt = useMemo(() => {
+    if (!timings) return null;
+    const todayFajr = parseTimeToday(timings.Fajr, now);
+    return todayFajr.getTime() > now.getTime() ? todayFajr : addDays(todayFajr, 1);
+  }, [timings, now]);
+
   const qiblaBearing = useMemo(() => {
     if (location?.type === "coords") return calculateQiblaBearing(location.lat, location.lng);
     return null;
@@ -192,5 +198,8 @@ export function usePrayerTimes() {
     countdown,
     progress,
     qiblaBearing,
+    fajrAt,
   };
 }
+
+export type PrayerTimesState = ReturnType<typeof usePrayerTimes>;

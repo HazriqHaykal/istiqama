@@ -28,7 +28,7 @@ export function TahajudCard() {
         className={`w-full rounded-full py-3 text-sm font-medium transition-all ${
           isTodayDone
             ? "bg-primary text-surface"
-            : "border border-hairline text-ink hover:-translate-y-px hover:border-primary"
+            : "border border-hairline text-ink hover:-translate-y-px active:scale-[0.97] hover:border-primary"
         }`}
       >
         {isTodayDone ? "Prayed Tahajud today ✓" : "Mark Tahajud as done today"}

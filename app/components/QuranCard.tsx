@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { useQuran } from "@/lib/quran/useQuran";
 import { Card } from "./Card";
@@ -64,7 +65,7 @@ export function QuranCard() {
         />
         <button
           type="submit"
-          className="rounded-full bg-gold px-5 py-2 text-sm font-medium text-surface transition-transform hover:-translate-y-px"
+          className="rounded-full bg-gold px-5 py-2 text-sm font-medium text-surface transition-transform hover:-translate-y-px active:scale-[0.97]"
         >
           Log
         </button>
@@ -96,6 +97,14 @@ export function QuranCard() {
       <div className="mt-auto pt-5">
         <Heatmap days={heatmapDays} tone="gold" />
       </div>
+
+      <Link
+        href="/quran"
+        className="mt-4 flex items-center justify-between gap-2 rounded-2xl border border-hairline px-4 py-3 text-sm text-ink transition-colors hover:border-primary"
+      >
+        <span>{lastPosition ? `Continue from ${lastPosition}` : "Open the in-app reader"}</span>
+        <span aria-hidden>→</span>
+      </Link>
     </Card>
   );
 }

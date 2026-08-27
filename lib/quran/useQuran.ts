@@ -42,6 +42,17 @@ export function useQuran() {
     [setLog]
   );
 
+  const setPosition = useCallback(
+    (position: string) => {
+      setLog((prev) => {
+        const key = todayKey();
+        const existing = prev[key];
+        return { ...prev, [key]: { pages: existing?.pages ?? 0, position } };
+      });
+    },
+    [setLog]
+  );
+
   const todayPages = log[todayKey()]?.pages ?? 0;
 
   const lastPosition = useMemo(() => {
@@ -63,15 +74,22 @@ export function useQuran() {
     [log]
   );
 
+  const weekCount = useMemo(
+    () => lastNDateKeys(7).filter((k) => (log[k]?.pages ?? 0) > 0).length,
+    [log]
+  );
+
   return {
     loaded,
     todayPages,
     logToday,
+    setPosition,
     goal,
     setGoal,
     lastPosition,
     currentStreak: current,
     longestStreak: longest,
     heatmapDays,
+    weekCount,
   };
 }

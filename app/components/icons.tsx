@@ -49,6 +49,15 @@ export function CompassIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+export function BellIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.4} strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M6 10a6 6 0 1 1 12 0c0 4 1.5 5.5 1.5 5.5H4.5S6 14 6 10Z" />
+      <path d="M10 19a2 2 0 0 0 4 0" />
+    </svg>
+  );
+}
+
 export function Ornament(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 140 18" fill="none" stroke="currentColor" strokeWidth={1} {...props}>

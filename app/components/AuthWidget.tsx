@@ -38,7 +38,7 @@ export function AuthWidget() {
       </button>
 
       {open && (
-        <div className="absolute right-0 z-10 mt-2 w-72 rounded-2xl border border-hairline bg-surface p-5 text-left shadow-[0_18px_36px_-20px_rgba(18,40,30,0.35)]">
+        <div className="absolute right-0 z-10 mt-2 w-72 rounded-2xl border border-hairline bg-surface p-5 text-left shadow-[0_18px_36px_-20px_rgba(58,42,28,0.35)]">
           <div className="mb-3 flex gap-4 text-xs font-medium">
             <button
               type="button"
@@ -91,7 +91,7 @@ export function AuthWidget() {
             <button
               type="submit"
               disabled={submitting}
-              className="mt-1 rounded-full bg-primary px-4 py-2 text-sm font-medium text-surface transition-opacity disabled:opacity-60"
+              className="mt-1 rounded-full bg-primary px-4 py-2 text-sm font-medium text-surface transition-all active:scale-[0.97] disabled:opacity-60"
             >
               {mode === "sign-in" ? "Sign in" : "Create account"}
             </button>

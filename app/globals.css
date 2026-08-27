@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f1e3;
-  --surface: #fffcf4;
-  --foreground: #1c2620;
-  --ink-muted: #5b6b60;
-  --primary: #0e3d2c;
-  --primary-soft: #e3ece5;
-  --gold: #b3872a;
-  --gold-soft: #f3e6c4;
-  --hairline: rgba(14, 61, 44, 0.14);
-  --lattice: rgba(14, 61, 44, 0.055);
+  --background: #fbf8f2;
+  --surface: #ffffff;
+  --foreground: #3a2a1c;
+  --ink-muted: #8a7360;
+  --primary: #6b4a2e;
+  --primary-soft: #f1e4d3;
+  --gold: #c08a3e;
+  --gold-soft: #f5e6c8;
+  --hairline: rgba(58, 42, 28, 0.1);
+  --lattice: rgba(58, 42, 28, 0.035);
+  --dot: rgba(58, 42, 28, 0.045);
 }
 
 @theme inline {
@@ -24,22 +25,24 @@
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
   --color-hairline: var(--hairline);
+  --color-dot: var(--dot);
   --font-sans: var(--font-worksans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-amiri), ui-serif, Georgia, serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a1310;
-    --surface: #101c17;
-    --foreground: #f1ead9;
-    --ink-muted: #92a89a;
-    --primary: #56b48a;
-    --primary-soft: rgba(86, 180, 138, 0.14);
-    --gold: #dcb864;
-    --gold-soft: rgba(220, 184, 100, 0.14);
-    --hairline: rgba(220, 184, 100, 0.16);
-    --lattice: rgba(220, 184, 100, 0.05);
+    --background: #1c140d;
+    --surface: #251b11;
+    --foreground: #f5ede0;
+    --ink-muted: #b9a488;
+    --primary: #d9a662;
+    --primary-soft: rgba(217, 166, 98, 0.14);
+    --gold: #e8c27e;
+    --gold-soft: rgba(232, 194, 126, 0.14);
+    --hairline: rgba(232, 194, 126, 0.14);
+    --lattice: rgba(232, 194, 126, 0.035);
+    --dot: rgba(232, 194, 126, 0.045);
   }
 }
 
@@ -52,6 +55,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   background-image:
+    radial-gradient(circle at 21px 21px, var(--dot) 1.6px, transparent 1.7px),
     linear-gradient(45deg, var(--lattice) 1px, transparent 1px),
     linear-gradient(-45deg, var(--lattice) 1px, transparent 1px);
   background-size: 42px 42px;
@@ -88,4 +92,31 @@ body {
 }
 .stagger > *:nth-child(4) {
   animation-delay: 0.38s;
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.ornament-glow {
+  animation: shimmer 3.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stagger > *,
+  .ornament-glow {
+    animation: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }

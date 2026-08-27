@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { PRAYER_NAMES, usePrayerTimes } from "@/lib/prayer/usePrayerTimes";
+import { PRAYER_NAMES, type PrayerTimesState } from "@/lib/prayer/usePrayerTimes";
+import { useCompassHeading } from "@/lib/prayer/useCompassHeading";
 import { Card } from "./Card";
 import { CompassIcon, MosqueIcon } from "./icons";
 
@@ -12,7 +13,7 @@ function pad(n: number): string {
 const RADIUS = 52;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 
-export function PrayerCard() {
+export function PrayerCard({ prayer }: { prayer: PrayerTimesState }) {
   const {
     status,
     error,
@@ -26,9 +27,14 @@ export function PrayerCard() {
     countdown,
     progress,
     qiblaBearing,
-  } = usePrayerTimes();
+  } = prayer;
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
+  const compass = useCompassHeading();
+  const liveRotation =
+    qiblaBearing !== null && compass.state === "active" && compass.heading !== null
+      ? (qiblaBearing - compass.heading + 360) % 360
+      : qiblaBearing;
 
   return (
     <Card
@@ -70,7 +76,7 @@ export function PrayerCard() {
           />
           <button
             type="submit"
-            className="rounded-full bg-primary px-5 py-2 text-sm font-medium text-surface transition-transform hover:-translate-y-px"
+            className="rounded-full bg-primary px-5 py-2 text-sm font-medium text-surface transition-transform hover:-translate-y-px active:scale-[0.97]"
           >
             Use city
           </button>
@@ -145,13 +151,20 @@ export function PrayerCard() {
               Qibla
             </span>
             {qiblaBearing !== null ? (
-              <span className="flex items-center gap-2 font-medium text-ink">
-                <CompassIcon
-                  className="h-4 w-4 text-gold"
-                  style={{ transform: `rotate(${qiblaBearing}deg)` }}
-                />
-                {Math.round(qiblaBearing)}° from North
-              </span>
+              <div className="flex items-center gap-3">
+                {compass.state !== "active" && compass.state !== "unsupported" && (
+                  <button onClick={compass.enable} className="text-xs text-primary underline decoration-dotted underline-offset-2">
+                    {compass.state === "denied" ? "Compass blocked — retry" : "Live compass"}
+                  </button>
+                )}
+                <span className="flex items-center gap-2 font-medium text-ink">
+                  <CompassIcon
+                    className="h-4 w-4 text-gold transition-transform duration-200 ease-linear"
+                    style={{ transform: `rotate(${liveRotation}deg)` }}
+                  />
+                  {compass.state === "active" ? "Facing marker" : `${Math.round(qiblaBearing)}° from North`}
+                </span>
+              </div>
             ) : (
               <span className="text-xs text-ink-muted">Enable location for Qibla direction</span>
             )}
